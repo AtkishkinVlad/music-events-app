@@ -43,7 +43,7 @@ paths:
       parameters:
         - name: artistname
           in: path
-          description: "The name of the artist. If it contains one of the special characters below, please be sure to replace it by the corresponding code: for / use %252F, for ? use %253F, for * use %252A, and for \" use %27C"
+          description: 'The name of the artist. If it contains one of the special characters below, please be sure to replace it by the corresponding code: for / use %252F, for ? use %253F, for * use %252A, and for " use %27C'
           required: true
           schema:
             type: string
@@ -54,12 +54,12 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: 200 response
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ArtistData'
+                $ref: "#/components/schemas/ArtistData"
   /artists/id_{artist_id}:
     get:
       tags:
@@ -82,12 +82,12 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: 200 response
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ArtistData'
+                $ref: "#/components/schemas/ArtistData"
   /artists/{artistname}/events:
     get:
       tags:
@@ -99,7 +99,7 @@ paths:
       parameters:
         - name: artistname
           in: path
-          description: "The name of the artist. If it contains one of the special characters below, please be sure to replace it by the corresponding code: for / use %252F, for ? use %253F, for * use %252A, and for \" use %27C"
+          description: 'The name of the artist. If it contains one of the special characters below, please be sure to replace it by the corresponding code: for / use %252F, for ? use %253F, for * use %252A, and for " use %27C'
           required: true
           schema:
             type: string
@@ -111,19 +111,19 @@ paths:
             type: string
         - name: date
           in: query
-          description: "Can be one of the following values: \"upcoming\", \"past\", \"all\", or a date range e.g. \"2015-05-05,2017-05-05\". If not specified, only upcoming shows are returned"
+          description: 'Can be one of the following values: "upcoming", "past", "all", or a date range e.g. "2015-05-05,2017-05-05". If not specified, only upcoming shows are returned'
           required: false
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Shows within a date range for the selected artist
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/EventData'
+                  $ref: "#/components/schemas/EventData"
 components:
   schemas:
     ArtistData:
@@ -143,26 +143,26 @@ components:
           example: 510
         name:
           type: string
-          example: 'Maroon 5'
+          example: "Maroon 5"
         url:
           type: string
           format: uri
-          example: 'http://www.bandsintown.com/Maroon5?came_from=67'
+          example: "http://www.bandsintown.com/Maroon5?came_from=67"
         image_url:
           type: string
           format: uri
-          example: 'https://s3.amazonaws.com/bit-photos/large/7481529.jpeg'
+          example: "https://s3.amazonaws.com/bit-photos/large/7481529.jpeg"
         thumb_url:
           type: string
           format: uri
-          example: 'https://s3.amazonaws.com/bit-photos/thumb/7481529.jpeg'
+          example: "https://s3.amazonaws.com/bit-photos/thumb/7481529.jpeg"
         facebook_page_url:
           type: string
           format: uri
-          example: 'https://www.facebook.com/maroon5'
+          example: "https://www.facebook.com/maroon5"
         mbid:
           type: string
-          example: '0ab49580-c84f-44d4-875f-d83760ea2cfe'
+          example: "0ab49580-c84f-44d4-875f-d83760ea2cfe"
         tracker_count:
           type: integer
         upcoming_event_count:
@@ -181,34 +181,34 @@ components:
       properties:
         id:
           type: string
-          example: '13722599'
+          example: "13722599"
         artist_id:
           type: string
-          example: '438314'
+          example: "438314"
         url:
           type: string
           format: uri
-          example: 'http://www.bandsintown.com/event/13722599?app_id=foo&artist=Skrillex&came_from=67'
+          example: "http://www.bandsintown.com/event/13722599?app_id=foo&artist=Skrillex&came_from=67"
         on_sale_datetime:
           type: string
           format: date-time
-          example: '2017-03-01T18:00:00'
+          example: "2017-03-01T18:00:00"
         datetime:
           type: string
           format: date-time
-          example: '2017-03-19T11:00:00'
+          example: "2017-03-19T11:00:00"
         description:
           type: string
-          example: 'This is a description'
+          example: "This is a description"
         title:
           type: string
-          example: 'Event title'
+          example: "Event title"
         venue:
-          $ref: '#/components/schemas/VenueData'
+          $ref: "#/components/schemas/VenueData"
         offers:
           type: array
           items:
-            $ref: '#/components/schemas/OfferData'
+            $ref: "#/components/schemas/OfferData"
         lineup:
           type: array
           items:
@@ -225,22 +225,22 @@ components:
       properties:
         name:
           type: string
-          example: 'Encore Beach Club'
+          example: "Encore Beach Club"
         latitude:
           type: string
-          example: '36.12714'
+          example: "36.12714"
         longitude:
           type: string
-          example: '-115.1629562'
+          example: "-115.1629562"
         city:
           type: string
-          example: 'Las Vegas'
+          example: "Las Vegas"
         region:
           type: string
-          example: 'NV'
+          example: "NV"
         country:
           type: string
-          example: 'United States'
+          example: "United States"
     OfferData:
       type: object
       required:
@@ -250,11 +250,11 @@ components:
       properties:
         type:
           type: string
-          example: 'Tickets'
+          example: "Tickets"
         url:
           type: string
           format: uri
-          example: 'http://www.bandsintown.com/event/13722599/buy_tickets?app_id=foo&artist=Skrillex&came_from=67'
+          example: "http://www.bandsintown.com/event/13722599/buy_tickets?app_id=foo&artist=Skrillex&came_from=67"
         status:
           type: string
-          example: 'available'
+          example: "available"

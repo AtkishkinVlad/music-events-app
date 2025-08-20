@@ -4,243 +4,243 @@
  */
 
 export interface paths {
-    "/artists/{artistname}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Get artist information
-         * @description Get artist information by artist name
-         *
-         */
-        get: operations["getArtistByName"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+  "/artists/{artistname}": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/artists/id_{artist_id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Get artist information
-         * @description Get artist information by artist ID
-         *
-         */
-        get: operations["getArtistById"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /**
+     * Get artist information
+     * @description Get artist information by artist name
+     *
+     */
+    get: operations["getArtistByName"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/artists/id_{artist_id}": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/artists/{artistname}/events": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Get upcoming, past, or all artist events, or events within a date range
-         * @description artist events
-         *
-         */
-        get: operations["getArtistEvents"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /**
+     * Get artist information
+     * @description Get artist information by artist ID
+     *
+     */
+    get: operations["getArtistById"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/artists/{artistname}/events": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
+    /**
+     * Get upcoming, past, or all artist events, or events within a date range
+     * @description artist events
+     *
+     */
+    get: operations["getArtistEvents"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
 }
 export type webhooks = Record<string, never>;
 export interface components {
-    schemas: {
-        ArtistData: {
-            /** @example 510 */
-            id?: number;
-            /** @example Maroon 5 */
-            name: string;
-            /**
-             * Format: uri
-             * @example http://www.bandsintown.com/Maroon5?came_from=67
-             */
-            url: string;
-            /**
-             * Format: uri
-             * @example https://s3.amazonaws.com/bit-photos/large/7481529.jpeg
-             */
-            image_url: string;
-            /**
-             * Format: uri
-             * @example https://s3.amazonaws.com/bit-photos/thumb/7481529.jpeg
-             */
-            thumb_url: string;
-            /**
-             * Format: uri
-             * @example https://www.facebook.com/maroon5
-             */
-            facebook_page_url: string;
-            /** @example 0ab49580-c84f-44d4-875f-d83760ea2cfe */
-            mbid: string;
-            tracker_count: number;
-            upcoming_event_count: number;
-        };
-        EventData: {
-            /** @example 13722599 */
-            id: string;
-            /** @example 438314 */
-            artist_id: string;
-            /**
-             * Format: uri
-             * @example http://www.bandsintown.com/event/13722599?app_id=foo&artist=Skrillex&came_from=67
-             */
-            url: string;
-            /**
-             * Format: date-time
-             * @example 2017-03-01T18:00:00
-             */
-            on_sale_datetime: string;
-            /**
-             * Format: date-time
-             * @example 2017-03-19T11:00:00
-             */
-            datetime: string;
-            /** @example This is a description */
-            description?: string;
-            /** @example Event title */
-            title?: string;
-            venue: components["schemas"]["VenueData"];
-            offers: components["schemas"]["OfferData"][];
-            lineup: string[];
-        };
-        VenueData: {
-            /** @example Encore Beach Club */
-            name: string;
-            /** @example 36.12714 */
-            latitude: string;
-            /** @example -115.1629562 */
-            longitude: string;
-            /** @example Las Vegas */
-            city: string;
-            /** @example NV */
-            region: string;
-            /** @example United States */
-            country: string;
-        };
-        OfferData: {
-            /** @example Tickets */
-            type: string;
-            /**
-             * Format: uri
-             * @example http://www.bandsintown.com/event/13722599/buy_tickets?app_id=foo&artist=Skrillex&came_from=67
-             */
-            url: string;
-            /** @example available */
-            status: string;
-        };
+  schemas: {
+    ArtistData: {
+      /** @example 510 */
+      id?: number;
+      /** @example Maroon 5 */
+      name: string;
+      /**
+       * Format: uri
+       * @example http://www.bandsintown.com/Maroon5?came_from=67
+       */
+      url: string;
+      /**
+       * Format: uri
+       * @example https://s3.amazonaws.com/bit-photos/large/7481529.jpeg
+       */
+      image_url: string;
+      /**
+       * Format: uri
+       * @example https://s3.amazonaws.com/bit-photos/thumb/7481529.jpeg
+       */
+      thumb_url: string;
+      /**
+       * Format: uri
+       * @example https://www.facebook.com/maroon5
+       */
+      facebook_page_url: string;
+      /** @example 0ab49580-c84f-44d4-875f-d83760ea2cfe */
+      mbid: string;
+      tracker_count: number;
+      upcoming_event_count: number;
     };
-    responses: never;
-    parameters: never;
-    requestBodies: never;
-    headers: never;
-    pathItems: never;
+    EventData: {
+      /** @example 13722599 */
+      id: string;
+      /** @example 438314 */
+      artist_id: string;
+      /**
+       * Format: uri
+       * @example http://www.bandsintown.com/event/13722599?app_id=foo&artist=Skrillex&came_from=67
+       */
+      url: string;
+      /**
+       * Format: date-time
+       * @example 2017-03-01T18:00:00
+       */
+      on_sale_datetime: string;
+      /**
+       * Format: date-time
+       * @example 2017-03-19T11:00:00
+       */
+      datetime: string;
+      /** @example This is a description */
+      description?: string;
+      /** @example Event title */
+      title?: string;
+      venue: components["schemas"]["VenueData"];
+      offers: components["schemas"]["OfferData"][];
+      lineup: string[];
+    };
+    VenueData: {
+      /** @example Encore Beach Club */
+      name: string;
+      /** @example 36.12714 */
+      latitude: string;
+      /** @example -115.1629562 */
+      longitude: string;
+      /** @example Las Vegas */
+      city: string;
+      /** @example NV */
+      region: string;
+      /** @example United States */
+      country: string;
+    };
+    OfferData: {
+      /** @example Tickets */
+      type: string;
+      /**
+       * Format: uri
+       * @example http://www.bandsintown.com/event/13722599/buy_tickets?app_id=foo&artist=Skrillex&came_from=67
+       */
+      url: string;
+      /** @example available */
+      status: string;
+    };
+  };
+  responses: never;
+  parameters: never;
+  requestBodies: never;
+  headers: never;
+  pathItems: never;
 }
 export type $defs = Record<string, never>;
 export interface operations {
-    getArtistByName: {
-        parameters: {
-            query: {
-                /** @description The application ID assigned to you by Bandsintown */
-                app_id: string;
-            };
-            header?: never;
-            path: {
-                /** @description The name of the artist. If it contains one of the special characters below, please be sure to replace it by the corresponding code: for / use %252F, for ? use %253F, for * use %252A, and for " use %27C */
-                artistname: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description 200 response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["ArtistData"];
-                };
-            };
-        };
+  getArtistByName: {
+    parameters: {
+      query: {
+        /** @description The application ID assigned to you by Bandsintown */
+        app_id: string;
+      };
+      header?: never;
+      path: {
+        /** @description The name of the artist. If it contains one of the special characters below, please be sure to replace it by the corresponding code: for / use %252F, for ? use %253F, for * use %252A, and for " use %27C */
+        artistname: string;
+      };
+      cookie?: never;
     };
-    getArtistById: {
-        parameters: {
-            query: {
-                /** @description The application ID assigned to you by Bandsintown */
-                app_id: string;
-            };
-            header?: never;
-            path: {
-                /** @description The Bandsintown ID of the artist. It can be found in the URL of the artist page on Bandsintown. */
-                artist_id: string;
-            };
-            cookie?: never;
+    requestBody?: never;
+    responses: {
+      /** @description 200 response */
+      200: {
+        headers: {
+          [name: string]: unknown;
         };
-        requestBody?: never;
-        responses: {
-            /** @description 200 response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["ArtistData"];
-                };
-            };
+        content: {
+          "application/json": components["schemas"]["ArtistData"];
         };
+      };
     };
-    getArtistEvents: {
-        parameters: {
-            query: {
-                /** @description The application ID assigned to you by Bandsintown */
-                app_id: string;
-                /** @description Can be one of the following values: "upcoming", "past", "all", or a date range e.g. "2015-05-05,2017-05-05". If not specified, only upcoming shows are returned */
-                date?: string;
-            };
-            header?: never;
-            path: {
-                /** @description The name of the artist. If it contains one of the special characters below, please be sure to replace it by the corresponding code: for / use %252F, for ? use %253F, for * use %252A, and for " use %27C */
-                artistname: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Shows within a date range for the selected artist */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["EventData"][];
-                };
-            };
-        };
+  };
+  getArtistById: {
+    parameters: {
+      query: {
+        /** @description The application ID assigned to you by Bandsintown */
+        app_id: string;
+      };
+      header?: never;
+      path: {
+        /** @description The Bandsintown ID of the artist. It can be found in the URL of the artist page on Bandsintown. */
+        artist_id: string;
+      };
+      cookie?: never;
     };
+    requestBody?: never;
+    responses: {
+      /** @description 200 response */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["ArtistData"];
+        };
+      };
+    };
+  };
+  getArtistEvents: {
+    parameters: {
+      query: {
+        /** @description The application ID assigned to you by Bandsintown */
+        app_id: string;
+        /** @description Can be one of the following values: "upcoming", "past", "all", or a date range e.g. "2015-05-05,2017-05-05". If not specified, only upcoming shows are returned */
+        date?: string;
+      };
+      header?: never;
+      path: {
+        /** @description The name of the artist. If it contains one of the special characters below, please be sure to replace it by the corresponding code: for / use %252F, for ? use %253F, for * use %252A, and for " use %27C */
+        artistname: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      /** @description Shows within a date range for the selected artist */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["EventData"][];
+        };
+      };
+    };
+  };
 }
